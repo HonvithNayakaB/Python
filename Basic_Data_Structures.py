@@ -104,4 +104,47 @@ def list():
         else:
             print("please enter a valid option from the menu")  
 
-list()
+def tuple():
+    mytuple=(5,7,2,4,7,2,9,1,5,8,3,7,0,4)
+    def count(mytuple):
+        while True:
+            try:
+                print("tuple = ",mytuple)
+                value=int(input("please enter a number to count it's appirence = "))
+                if(value in mytuple):
+                    return mytuple.count(value)
+                else:
+                    print("\nthe number you entered does not exists\n")
+            except ValueError:
+                print("\nplease enter a valid integer of base 10 \n")
+
+    def index(mytuple):
+        while True:
+            try:
+                print("tuple = ",mytuple)
+                value=int(input("please enter a number to finds its position = "))
+                if(value in mytuple):
+                    return mytuple.index(value)
+                else:
+                    print("\nthe number you entered does not exists\n")
+            except ValueError:
+                print("\nplease enter a valid integer of base 10\n")
+
+    print("\n______---LIST_MENU---______\n")
+    print("1. COUNT A NUMBER IN TUPLE")
+    print("2. FIND THE INDEX OF A NUMBER IN TUPLE")
+    print("3. EXITING")
+
+    while True:
+        option=int(input("please enter your option = "))
+        if(option==1):
+            print("the number has occured ",count(mytuple)," times")
+        elif(option==2):
+            print("the number is found first at position = ",index(mytuple))
+        elif(option==3):
+            print("breaking..")
+            break;
+        else:
+            print("please enter a valid option")
+
+tuple()
