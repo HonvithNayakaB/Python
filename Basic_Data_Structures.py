@@ -147,4 +147,78 @@ def tuple():
         else:
             print("please enter a valid option")
 
-tuple()
+def dictionary():
+    mydict={}
+    def update(mydict):
+        key=input("please enter the item key = ")
+        value=input("please enter the item value = ")
+        mydict.update({key:value})
+        print("operation successful \nhere is the updated list = ",mydict)
+        return mydict
+
+    def clear(mydict):
+        mydict.clear()
+        print("operation successful \nhere is the updated list = ",mydict)
+        return mydict
+
+    def get(mydict):
+        while True:
+            key=input("please enter the item key to find = ")
+            if(key in mydict):
+                print(mydict.get(key))
+                break;
+            else:
+                print("\nplease enter a valid key present in the dictionary\n")
+
+    def item(mydict):
+        print(mydict.items())
+    
+    def key(mydict):
+        print(mydict.keys())
+
+    def value(mydict):
+        print(mydict.values())
+
+    def pop (mydict):
+        while True:
+            key=input("please enter the item key pop = ")
+            if(key in mydict):
+                print(mydict.pop(key))
+                print("operation successful \nhere is the updated list = ",mydict)
+                return mydict
+            else:
+                print("\nplease enter a valid key present in the dictionary\n")
+
+    print("\n______---LIST_MENU---______\n")
+    print("1. UPDATE THE DICTIONARY")
+    print("2. CLEAR THE DICTIONARY")
+    print("3. GET THE SPECIFIC ITEM FROM DICTIONARY")
+    print("4. GET ALL THE ITEM FROM DICTIONARY")
+    print("5. GET ALL THE KEYS FROM THE DICTIONARY")
+    print("6. GET ALL THE VALUES FROM THE DICTIONARY")
+    print("7. POP A STECIFIC ITEM FROM DICTIONARY")
+    print("8. EXIT\n")
+    
+    while True:
+        option=int(input("please enter your option = "))
+        if(option==1):
+            mydict=update(mydict)
+        elif(option==2):
+            mydict=clear(mydict)
+        elif(option==3):
+            get(mydict)
+        elif(option==4):
+            item(mydict)
+        elif(option==5):
+            key(mydict)
+        elif(option==6):
+            value(mydict)
+        elif(option==7):
+            mydict=pop(mydict)
+        elif(option==8):
+            print("breaking ..")
+            break
+        else:
+            print("please enter a valid option\n ")
+
+dictionary()
