@@ -1,4 +1,6 @@
 import time
+import matplotlib.pyplot as plt
+import numpy as np
 def create():
     n=int(input("please enter the lenght of the list = "))
     l1=[]
@@ -8,9 +10,8 @@ def create():
     l1.sort()
     return l1
 
-def binary_search(l1):
-    target=int(input("\nplease enter the element to find = "))
-    high=len(l1)
+def binary_search(l1,target):
+    high=len(l1)-1
     low=0
     while(high>=low):
         mid=(high+low)//2
@@ -24,8 +25,9 @@ def binary_search(l1):
 
 l1=create()
 print("the sorted list \n ",l1)
+target=int(input("\nplease enter the element to find = "))
 start_time=time.time()
-result=binary_search(l1)
+result=binary_search(l1,target)
 end_time=time.time()
 time=end_time-start_time
 if(result!=-1):
@@ -33,3 +35,24 @@ if(result!=-1):
 else:
     print("the element is not found in the list")
 print("the time taken to search for the element is = ",time)
+
+elements=[]
+for i in range(6):
+    elements.append(i*500)
+
+times=[]
+
+for i in range(6):
+    l1=np.random.randint(1,500,i*500).tolist()
+    target=np.random.randint(1,500)
+    start_time=time.time()
+    binary_search(l1,target)
+    end_time=time.time()
+    total_time=end_time-start_time
+    times.append(total_time)
+
+plt.plot(elements,times,label="binary search")
+plt.xlabel("number of elements")
+plt.ylabel("time taken")
+plt.grid()
+plt.show()
