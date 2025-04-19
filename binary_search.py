@@ -1,3 +1,4 @@
+import time
 def create():
     n=int(input("please enter the lenght of the list = "))
     l1=[]
@@ -23,8 +24,12 @@ def binary_search(l1):
 
 l1=create()
 print("the sorted list \n ",l1)
+start_time=time.time()
 result=binary_search(l1)
+end_time=time.time()
+time=end_time-start_time
 if(result!=-1):
     print("the element is found at index = ",result)
 else:
     print("the element is not found in the list")
+print("the time taken to search for the element is = ",time)
