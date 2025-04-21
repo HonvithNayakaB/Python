@@ -4,6 +4,8 @@ class Node:
         self.next=None
         self.prv=None
 
+#all the operations are performed at the begining
+
 def push(head):
     data=int(input("please enter the node data = "))
     new_node=Node(data)
