@@ -1,3 +1,4 @@
+import time
 class Node:
     def __init__(self,data):
         self.data=data
@@ -62,13 +63,25 @@ print("5. EXIT")
 while True:
     opt=int(input("please enter your option = "))
     if(opt==1):
+        start_time=time.time()
         head=enqueue(head)
+        end_time=time.time()
+        print("the time taken to to perform the enqueue operaions is = ",end_time-start_time)
     elif(opt==2):
+        start_time=time.time()
         head=dequeue(head)
+        end_time=time.time()
+        print("the time taken to preform the dequeue operation is = ",end_time-start_time)
     elif(opt==3):
+        start_time=time.time()
         travers(head)
+        end_time=time.time()
+        print("the time taken to travers through the queue is = ",end_time-start_time)
     elif(opt==4):
+        start_time=time.time()
         peak(head)
+        end_time=time.time()
+        print("the time taken to peak from the queue is = ",end_time-start_time)
     elif(opt==5):
         print('exiting..')
         break
