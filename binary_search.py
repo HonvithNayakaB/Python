@@ -29,12 +29,12 @@ target=int(input("\nplease enter the element to find = "))
 start_time=time.time()
 result=binary_search(l1,target)
 end_time=time.time()
-time=end_time-start_time
+times=end_time-start_time
 if(result!=-1):
     print("the element is found at index = ",result)
 else:
     print("the element is not found in the list")
-print("the time taken to search for the element is = ",time)
+print("the time taken to search for the element is = ",times)
 
 elements=[]
 for i in range(6):
